@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  proyectodb:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=int_continuadb
+    ports:
+      - 3307:3306
+  
+  proyectoapp:
+      build: .
+      depends_on:
+        - proyectodb
+      links:
+        - proyectodb
+      ports:
+        - 3000:3000
+
+
