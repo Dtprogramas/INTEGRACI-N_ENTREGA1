@@ -1,0 +1,17 @@
+langueage: node
+
+node:
+  -18
+
+before_scrip:
+  - docker-compose.yml
+  - .dockerigonore
+  - Dockerfile
+
+Cache:
+  directories:
+    -~/Pictures/integracion-con
+
+notifications:
+  email:ancuellar11@poligran.edu.co
+  
